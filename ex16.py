@@ -13,7 +13,11 @@ input("?")
 
 print("Opening the file...")
 target = open(filename, 'w')
+txt = open(filename)
 
+# printing the files content
+print(f"Here's your file {filename}:")
+print(txt.read())
 print("Truncating the file. Goodbay!")
 target.truncate()
 
