@@ -1,2 +1,2 @@
 # pythonHardWay
-My Course Programming Files
+Learn Python the hard way - my course programming files
