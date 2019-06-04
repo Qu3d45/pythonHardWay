@@ -5,6 +5,8 @@ people = 20
 cats = 30
 dogs = 15
 
+# The if-statement tells your script, ”If this Boolean expression is True, then run the code under
+# it, otherwise skip it.”
 if people < cats:
     print("Too many cats! The world is doomed!")
 
