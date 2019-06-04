@@ -1,9 +1,9 @@
 ﻿# Learn Pyhton The Hard Way ex26 - Fix Someone Else’s Code
 # Manuel Lameira
 
-from sys import argv
+import sys
 
-script, filename = argv
+script, filename = sys.argv
 
 print("How old are you?", end=' ')
 age = input()
@@ -96,5 +96,5 @@ if people >= dogs:
 if people <= dogs:
     print("People are less than or equal to dogs.")
 
-# if people = dogs:
-#     print("People are dogs.")
+if people == dogs:
+    print("People are dogs.")
