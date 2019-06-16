@@ -41,10 +41,11 @@ class math_operation(object):
         return r_remind
 
     # try to some all but in this way it multipleis the result...
-    def crazy(self, r_sum, r_sub, r_multi, r_div, r_fdiv, r_remind):
-        r_cray = r_sum + r_sub + r_multi + r_div + r_fdiv + r_remind
+    def crazy(self):
+        r_cray = test.add() + test.sub() + test.multi(
+        ) + test.divi() + test.floor_div() + test.remind()
         print(
-            f"If we sum all the results {r_sum} + {r_sub} + {r_multi} + {r_div} + {r_fdiv} + {r_remind}= {r_cray}\n")
+            f"If we sum all the results = {r_cray}\n")  # {r_sum} + {r_sub} + {r_multi} + {r_div} + {r_fdiv} + {r_remind}
 
 
 try:
@@ -57,14 +58,11 @@ except:
 
 test = math_operation(num1, num2)
 
-test.add()
-test.sub()
-test.multi()
-test.divi()
-test.floor_div()
-test.remind()
+# test.add()
+# test.sub()
+# test.multi()
+# test.divi()
+# test.floor_div()
+# test.remind()
 
-# test.crazy()
-
-test.crazy(test.add(), test.sub(), test.multi(),
-           test.divi(), test.floor_div(), test.remind())
+test.crazy()
