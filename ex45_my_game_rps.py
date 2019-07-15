@@ -1,69 +1,65 @@
 ﻿# Learn Pyhton The Hard Way ex45 - Rock, Paper, Scissors Game
 # Manuel Lameira
 
-# ROCK, PAPER, SCISSORS
-# Passed down from the ancient Chinese Han dynasty, yhe game
-# shoushiling is now better known as Rock, Paper, Scissors.
-# This code implements a version of the game that is you against
-# the computer.
-
-# Here we're doing some setup by importing the random module
-# and setting up the winner veriable.
-
-from random import randint
+import random
 
 
-class Rock_Paper_Scissors(object):
+def comp_choice():
 
-    def __init__(self):
+    possible_moves = ['rock', 'paper', 'scissors']
 
-        self.winner = ''
+    computer_choice = random.choice(possible_moves)
 
-        self.random_choice = randint(0, 2)
+    # random_choice = random.randint(0, 2)
 
-        if self.random_choice == 0:
-            self.computer_choice = 'rock'
-        elif self.random_choice == 1:
-            self.computer_choice = 'paper'
-        else:
-            self.random_choice = 'scissors'
+    # if random_choice == 0:
+    #     computer_choice = possible_moves[0]
+    # elif random_choice == 1:
+    #     computer_choice = possible_moves[1]
+    # else:
+    #     computer_choice = possible_moves[2]
 
-        self.user_choice = ''
-
-        while (self.user_choice != 'rock' and
-               self.user_choice != 'paper' and
-               self.user_choice != 'scissors'):
-            self.user_choice = input("rock, paper, scissors? ")
-
-        uc = self.user_choice
-        print(">>>> uc", uc)
-        cc = self.computer_choice
-        win = self.winner
-
-        if cc == uc:
-            win = 'Tie'
-        elif cc == 'paper' and uc == 'rock':
-            win = 'Computer'
-        elif cc == 'rock' and uc == 'scissors':
-            win = 'Computer'
-        elif cc == 'scissors' and uc == 'paper':
-            win = 'Lhytros'
-        else:
-            win = 'You'
-
-        if win == 'Tie':
-            print("Both choose", cc + ", both died...")
-
-            # return 'death'
-
-        else:
-            print(win, "won. Gothon Lhytros choose",
-                  cc + ".")
-
-            # return 'laser_weapon_armory'
+    print(">>>> ", computer_choice)
+    return computer_choice
 
 
-a_game = Rock_Paper_Scissors()
+def usr_choice():
 
-# todo: dividir o program em funcções (escolha do utilizador / escolha do gotho) e depois testar
-# Esta a dar um erro: imposivel entregar retono em __init__
+    user_choice = ''
+
+    while (user_choice != 'rock' and
+           user_choice != 'paper' and
+           user_choice != 'scissors'):
+        user_choice = input("rock, paper, scissors? ")
+
+    # print(">>>> " user_choice)
+    return user_choice
+
+
+def rock_paper_scissors_game():
+
+    winner = ''
+
+    cc = comp_choice()
+    uc = usr_choice()
+
+    if cc == uc:
+        winner = 'Tie'
+    elif cc == 'paper' and uc == 'rock':
+        winner = 'Gothon Lhytros'
+    elif cc == 'rock' and uc == 'scissors':
+        winner = 'Gothon Lhytros'
+    elif cc == 'scissors' and uc == 'paper':
+        winner = 'Gothon Lhytros'
+    else:
+        winner = 'You'
+
+    if winner == 'Tie' or winner == 'Gothon Lhytros':
+        print(f"\nGothon Lhytros choose {cc}.")
+        return 0
+    else:
+        print(f"\nYou won. Gothon Lhytros choose {cc}.")
+        return 1
+
+
+# rock_paper_scissors_game()

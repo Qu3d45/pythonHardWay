@@ -87,13 +87,24 @@ class CentralCorridor(Scene):
                 the academy. You tell the one Gothon joke you know:
                 Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr,
                 fur fvgf nebhaq gur ubhfr. The Gothon stops, tries
-                not to laugh, then busts out laughing and can't move.
-                While he's laughing you run up and shoot him square in
+                not to laugh, then busts out laughing and can't move. 
+                You agree to settle the matter with a traditional game.
+                """))
+
+            x = ex45_my_game_rps.rock_paper_scissors_game()
+
+            if x == 0:
+                print(dedent("""
+                Both shoot at the same time and both die...
+                """))
+                return 'death'
+            else:
+                print(dedent("""
+                While he's looking at your hand, you shoot him square in
                 the head putting him down, then jump through the
                 Weapon Armory door.
                 """))
-
-            return 'laser_weapon_armory'
+                return 'laser_weapon_armory'
 
         else:
             print("DOES NOT COMPUTE!")
@@ -139,7 +150,7 @@ class LaserWeaponArmory(Scene):
                     The lock buzzes one last time and then you hear a 
                     sickening melting sound as the mechanism is fused
                     together. You decide to sit there, and finally the 
-                    Gothons blow up the ship from their ahip and you die.
+                    Gothons blow up your ship from their ship and you die.
                     """))
                 return 'death'
         else:
